@@ -16,21 +16,10 @@ gem "rspec"
 gem "rspec-rails", :group => [ :development, :test ]
 gem "mongo_mapper"
 gem "bson_ext"
-gem "factory_girl_rails"
+gem "factory_girl_rails", :group => [ :development, :test ]
 run "bundle install"
 
 generate 'rspec:install'
-
-file 'spec/factories.rb', <<-ERB
-  # factories go here...
-  
-  Factory.define :user do |u|
-    u.username              "some_username"
-    u.email                 "some_usernamemail.com"
-    u.password              "foobar"
-    u.password_confirmation "foobar"
-  end
-ERB
 
 
 inject_into_file 'spec/spec_helper.rb', "\nrequire 'factory_girl'", :after => "require 'rspec/rails'"
