@@ -14,14 +14,11 @@ remove_file     "public/images/rails.png"
 gem "rails3-generators", :group => [ :development ]
 gem "rspec"
 gem "rspec-rails", :group => [ :development, :test ]
-gem "jquery-rails"
 gem "mongo_mapper"
 gem "bson_ext"
 gem "factory_girl_rails"
 run "bundle install"
 
-
-generate 'jquery:install --ui'
 generate 'rspec:install'
 
 file 'spec/factories.rb', <<-ERB
